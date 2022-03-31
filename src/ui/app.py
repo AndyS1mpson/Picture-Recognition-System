@@ -60,16 +60,16 @@ class App(Tk):
         self.canvas.create_window(440, 100, window=self.hog_label)
 
 
-        self.garbor_label = Label(self.canvas, text="Garbor: ", font="20")
-        self.garbor_label.pack(side=LEFT, anchor=E)
+        self.orb_label = Label(self.canvas, text="ORB: ", font="20")
+        self.orb_label.pack(side=LEFT, anchor=E)
 
-        self.canvas.create_window(790, 100, window=self.garbor_label)
+        self.canvas.create_window(790, 100, window=self.orb_label)
 
 
-        self.hist_label = Label(self.canvas, text="Hist: ", font="20")
-        self.hist_label.pack(side=LEFT, anchor=E)   
+        self.sift_label = Label(self.canvas, text="SIFT: ", font="20")
+        self.sift_label.pack(side=LEFT, anchor=E)   
 
-        self.canvas.create_window(1150, 100, window=self.hist_label)
+        self.canvas.create_window(1150, 100, window=self.sift_label)
 
         self.result_label = Label(self.canvas, text="Style:", font="20")
         self.canvas.create_window(1400, 100, window=self.result_label)

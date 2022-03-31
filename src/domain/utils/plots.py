@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import cv2
 import io
 
 
@@ -20,12 +21,12 @@ def plot_hog(hog: np.array) -> io.BytesIO:
 
 
 
-def plot_garbor(garbor: np.array) -> io.BytesIO:
+def plot_orb(orb: np.array) -> io.BytesIO:
     """
-    Преобразование Garbor дескриптора для отображения.
+    Преобразование ORB дескриптора для отображения.
     """
     fig = plt.figure(figsize=(3, 3))
-    plt.imshow(garbor)
+    plt.imshow(orb)
     buf = io.BytesIO()
     fig.savefig(buf)
     buf.seek(0)
@@ -33,16 +34,23 @@ def plot_garbor(garbor: np.array) -> io.BytesIO:
 
 
 
-def plot_hist(hist: np.array) -> io.BytesIO:
+def plot_sift(sift: np.array) -> io.BytesIO:
     """
-    Преобразование Hist дескриптора для отображения.
+    Преобразование SIFT дескриптора для отображения.
     """
+    # fig = plt.figure(figsize=(4, 4))
+    # color = ('b', 'g', 'r')
+    # for j in range(0, 3):
+    #     plt.plot(sift[j], color=color[j])
+    #     plt.xlim([0, 64])
+    # buf = io.BytesIO()
+    # fig.savefig(buf)
+    # buf.seek(0)
+    #return buf
     fig = plt.figure(figsize=(4, 4))
-    color = ('b', 'g', 'r')
-    for j in range(0, 3):
-        plt.plot(hist[j], color=color[j])
-        plt.xlim([0, 64])
+    plt.imshow(sift)
     buf = io.BytesIO()
     fig.savefig(buf)
     buf.seek(0)
     return buf
+    

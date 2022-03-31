@@ -1,9 +1,9 @@
 from collections import Counter
 from typing import List, Tuple
 
-from domain.classifiers import GarborClassifier, HistClassifier, HoGClassifier
+from domain.classifiers import ORBClassifier, SIFTClassifier, HoGClassifier
 from domain.utils.load_data import load
-from domain.utils.plots import plot_garbor, plot_hist, plot_hog
+from domain.utils.plots import plot_orb, plot_hog, plot_sift
 
 
 def recognition(image: List) -> Tuple[str, List]:
@@ -24,8 +24,8 @@ def recognition(image: List) -> Tuple[str, List]:
     # create classifiers for voting classification 
     classifiers = [
         HoGClassifier(),
-        GarborClassifier(),
-        HistClassifier()
+        ORBClassifier(),
+        SIFTClassifier()
     ]
 
     # split data to X and y
@@ -49,8 +49,8 @@ def recognition(image: List) -> Tuple[str, List]:
 
     descriptors = [
         plot_hog(features[0]),
-        plot_garbor(features[1]),
-        plot_hist(features[2])
+        plot_orb(features[1]),
+        plot_sift(features[2])
     ]
 
     return mark, descriptors
