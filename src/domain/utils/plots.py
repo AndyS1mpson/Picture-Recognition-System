@@ -21,7 +21,7 @@ def plot_hog(hog: np.array) -> io.BytesIO:
 
 
 
-def plot_orb(orb: np.array) -> io.BytesIO:
+def plot_descriptor(orb: np.array) -> io.BytesIO:
     """
     Преобразование ORB дескриптора для отображения.
     """
@@ -32,25 +32,3 @@ def plot_orb(orb: np.array) -> io.BytesIO:
     buf.seek(0)
     return buf
 
-
-
-def plot_sift(sift: np.array) -> io.BytesIO:
-    """
-    Преобразование SIFT дескриптора для отображения.
-    """
-    # fig = plt.figure(figsize=(4, 4))
-    # color = ('b', 'g', 'r')
-    # for j in range(0, 3):
-    #     plt.plot(sift[j], color=color[j])
-    #     plt.xlim([0, 64])
-    # buf = io.BytesIO()
-    # fig.savefig(buf)
-    # buf.seek(0)
-    #return buf
-    fig = plt.figure(figsize=(4, 4))
-    plt.imshow(sift)
-    buf = io.BytesIO()
-    fig.savefig(buf)
-    buf.seek(0)
-    return buf
-    

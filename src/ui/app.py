@@ -32,7 +32,7 @@ class App(Tk):
             self.interface_frame,
             text="Upload",
             width=20,
-            command=lambda: self.upload_image()
+            command=self.upload_image
         )
         self.photo.grid(row=1, column=0, padx=15, pady=7)
 
@@ -40,7 +40,7 @@ class App(Tk):
             self.interface_frame,
             text="Classify",
             width=20,
-            command=lambda: self.classifier()
+            command=self.classifier
             )
         self.recognition.grid(row=1, column=1, padx=15, pady=7)
 
